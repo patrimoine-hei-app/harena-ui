@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# Harena
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### preprod:
 
-Currently, two official plugins are available:
+### prod:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [harena-ui.vercel.app](https://harena-ui.vercel.app)
 
-## Expanding the ESLint configuration
+# Scripts to format and check code
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+```bash
+# To format code style:
+npm run format
 
-- Configure the top-level `parserOptions` property like this:
+# To check code's format style
+npm run format:check
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json", "./tsconfig.app.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
+# To check code with lint
+npm run lint
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
