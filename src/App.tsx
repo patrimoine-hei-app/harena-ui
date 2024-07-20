@@ -4,8 +4,8 @@ import { PatrimoineCreate } from "./components/patrimoine/patrimoineCreate";
 import { PatrimoineList } from "./components/patrimoine/patrimoineList";
 import { PatrimoineEdit } from "./components/patrimoine/patrimoineEdit";
 import dataProvider from "./providers/dataProvider";
-import ChartPie from "./components/ChartPie";
-import ChartBar from "./components/ChartBar";
+import ChartBar from "./components/chart/ChartBar";
+import ChartPie from "./components/chart/ChartPie";
 
 const Dashboard = () => (
   <div>

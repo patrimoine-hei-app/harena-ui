@@ -1,5 +1,3 @@
-import { Chart } from "react-google-charts";
-
 export const data = [
   ["Year", "Sales"],
   ["2013", 1000],
@@ -14,15 +12,3 @@ export const options = {
   legend: { position: "top", maxLines: 3 },
   vAxis: { minValue: 0 },
 };
-
-export default function ChartBar() {
-  return (
-    <Chart
-      chartType="AreaChart"
-      width="100%"
-      height="400px"
-      data={data}
-      options={options}
-    />
-  );
-}

@@ -5,7 +5,7 @@ export const PatrimoineCreate: React.FC = () => (
   <Create>
     <SimpleForm>
       <TextInput source="nom" />
-      <TextInput source="patrimoine nom" />
+      <TextInput source="patrimoine_nom" />
       <DateInput source="temps" />
       <TextInput source="Valeur Comptable" type="number" />
     </SimpleForm>
