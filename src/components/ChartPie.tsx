@@ -13,7 +13,7 @@ const options = {
   title: "My Daily Activities",
 };
 
-const MyChart = () => {
+const ChartPie = () => {
   return (
     <Chart
       chartType="PieChart"
@@ -25,4 +25,4 @@ const MyChart = () => {
   );
 };
 
-export default MyChart;
+export default ChartPie;

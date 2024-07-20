@@ -4,12 +4,16 @@ import { PatrimoineCreate } from "./components/patrimoine/patrimoineCreate";
 import { PatrimoineList } from "./components/patrimoine/patrimoineList";
 import { PatrimoineEdit } from "./components/patrimoine/patrimoineEdit";
 import dataProvider from "./providers/dataProvider";
-import MyChart from "./components/Chart";
+import ChartPie from "./components/ChartPie";
+import ChartBar from "./components/ChartBar";
 
 const Dashboard = () => (
   <div>
     <h1>Dashboard</h1>
-    <MyChart />
+    <div style={{ display: "flex", flexDirection: "row", gap: 8 }}>
+      <ChartBar />
+      <ChartPie />
+    </div>
   </div>
 );
 
