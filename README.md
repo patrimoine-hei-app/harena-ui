@@ -4,7 +4,7 @@
 
 ### prod:
 
-- [harena-ui.vercel.app](https://harena-ui.vercel.app)
+- [harena-ui-uehz.vercel.app](https://harena-ui-uehz.vercel.app)
 
 # Scripts to format and check code
 
