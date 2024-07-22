@@ -1,27 +1,22 @@
 import { DataProvider } from "react-admin";
 import { patrimoineProvider } from "./patrimoineProvider";
-import { possessionProvider } from './possessionProvider';
+import { possessionProvider } from "./possessionProvider";
 import { CustomDataprovider } from "./type";
 
 const getProvider = (resource: string): CustomDataprovider<any> => {
   switch (resource) {
-    case "patrimoines":
-      return patrimoineProvider;
-      case "possessions":
-        return possessionProvider;
-    default:
-        throw new Error("Unknown resources");
+  case "patrimoines":
+    return patrimoineProvider;
+  case "possessions":
+    return possessionProvider;
+  default:
+    throw new Error("Unknown resources");
   }
 };
 
 const dataProvider: DataProvider = {
   getList: async (resource, params) => {
-    const {
-      pagination = { page: 1, perPage: 10 },
-      sort,
-      filter,
-      meta,
-    } = params;
+    const { pagination = { page: 1, perPage: 10 }, sort, filter, meta } = params;
     const response = await getProvider(resource).getList(
       pagination.page,
       pagination.perPage,
@@ -29,38 +24,27 @@ const dataProvider: DataProvider = {
       sort,
       meta
     );
-    return {
-      data: response,
-      total: response.length,
-    };
+    return { data: response, total: response.length };
   },
   getOne: async (resource, params) => {
     const { id, meta } = params;
     const response = await getProvider(resource).getOne(id as string, meta);
-    return {
-      data: response,
-    };
+    return { data: response };
   },
   create: async (resource, params) => {
     const { data: payload, meta } = params;
     const response = await getProvider(resource).create(payload, meta);
-    return {
-      data: response,
-    };
+    return { data: response };
   },
   update: async (resource, params) => {
     const { data: payload, meta } = params;
     const response = await getProvider(resource).update(payload, meta);
-    return {
-      data: response,
-    };
+    return { data: response };
   },
   delete: async (resource, params) => {
     const { id, meta } = params;
     const response = await getProvider(resource).delete(id as string, meta);
-    return {
-      data: response,
-    };
+    return { data: response };
   },
   deleteMany: () => {
     throw new Error("Not implemented");

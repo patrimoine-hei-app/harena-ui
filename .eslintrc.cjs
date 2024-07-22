@@ -6,10 +6,16 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: "./tsconfig.app.json", // Reference to your TypeScript config
+  },
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh", "@typescript-eslint"],
   rules: {
@@ -23,5 +29,6 @@ module.exports = {
     "prefer-arrow-callback": "off",
     "indent": ["error", 2],
     "react/prop-types": ["error", { ignore: ["prop2"] }],
+    "@typescript-eslint/no-explicit-any": "off",
   },
 };
