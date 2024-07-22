@@ -1,13 +1,16 @@
 import { DataProvider } from "react-admin";
 import { patrimoineProvider } from "./patrimoineProvider";
+import { possessionProvider } from './possessionProvider';
 import { CustomDataprovider } from "./type";
 
 const getProvider = (resource: string): CustomDataprovider<any> => {
   switch (resource) {
     case "patrimoines":
       return patrimoineProvider;
+      case "possessions":
+        return possessionProvider;
     default:
-      throw new Error("Unknown resources");
+        throw new Error("Unknown resources");
   }
 };
 
