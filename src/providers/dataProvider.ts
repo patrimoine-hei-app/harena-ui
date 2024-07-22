@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+
 import { DataProvider } from "react-admin";
 import { patrimoineProvider } from "./patrimoineProvider";
 import { possessionProvider } from "./possessionProvider";
@@ -5,18 +7,23 @@ import { CustomDataprovider } from "./type";
 
 const getProvider = (resource: string): CustomDataprovider<any> => {
   switch (resource) {
-  case "patrimoines":
-    return patrimoineProvider;
-  case "possessions":
-    return possessionProvider;
-  default:
-    throw new Error("Unknown resources");
+    case "patrimoines":
+      return patrimoineProvider;
+    case "possessions":
+      return possessionProvider;
+    default:
+      throw new Error("Unknown resources");
   }
 };
 
 const dataProvider: DataProvider = {
   getList: async (resource, params) => {
-    const { pagination = { page: 1, perPage: 10 }, sort, filter, meta } = params;
+    const {
+      pagination = { page: 1, perPage: 10 },
+      sort,
+      filter,
+      meta,
+    } = params;
     const response = await getProvider(resource).getList(
       pagination.page,
       pagination.perPage,
