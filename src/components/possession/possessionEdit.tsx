@@ -25,7 +25,9 @@ const PossessionEdit: React.FC<EditProps> = (props) => {
             { id: "MATERIEL", name: "Matériel" },
             { id: "FLUXARGENT", name: "Flux d'Argent" },
           ]}
-          onChange={(event) => handleTypeChange(event as React.ChangeEvent<HTMLSelectElement>)}
+          onChange={(event) =>
+            handleTypeChange(event as React.ChangeEvent<HTMLSelectElement>)
+          }
         />
         {type === "ARGENT" && (
           <>
