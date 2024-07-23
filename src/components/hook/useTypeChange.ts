@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from 'react';
 
 export const useTypeChange = () => {
-  const [type, setType] = useState<string>("");
+    const [type, setType] = useState<string>('');
 
-  const handleTypeChange = (newType: string) => {
-    setType(newType);
-  };
+    const handleTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        setType(event.target.value);
+    };
 
-  return { type, handleTypeChange };
+    return {
+        type,
+        handleTypeChange,
+    };
 };
