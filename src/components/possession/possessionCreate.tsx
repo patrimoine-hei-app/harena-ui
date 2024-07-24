@@ -13,9 +13,6 @@ import { useTypeChange } from "../hook/useTypeChange.ts";
 
 const PossessionCreate: React.FC<CreateProps> = (props) => {
   const { type, handleTypeChange } = useTypeChange();
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    handleTypeChange(event.target.value);
-  };
 
   return (
     <Create {...props}>
@@ -29,7 +26,7 @@ const PossessionCreate: React.FC<CreateProps> = (props) => {
             { id: "FLUXARGENT", name: "Flux d'Argent" },
           ]}
           onChange={(event) =>
-            handleSelectChange(event as React.ChangeEvent<HTMLSelectElement>)
+            handleTypeChange(event as React.ChangeEvent<HTMLSelectElement>)
           }
         />
         {type === "ARGENT" && (
