@@ -1,13 +1,13 @@
 import * as React from "react";
-import { Create, SimpleForm, TextInput, DateInput } from "react-admin";
+import { Create, SimpleForm, TextInput, DateInput, NumberInput } from "react-admin";
 
 export const PatrimoineCreate: React.FC = () => (
   <Create>
     <SimpleForm>
       <TextInput source="nom" />
-      <TextInput source="patrimoine_nom" />
-      <DateInput source="temps" />
-      <TextInput source="Valeur Comptable" type="number" />
+      <TextInput source="possesseur.nom" label="Nom du Possesseur" />
+      <DateInput source="t" label="Date" />
+      <NumberInput source="valeur_comptable" label="Valeur Comptable" />
     </SimpleForm>
   </Create>
 );
