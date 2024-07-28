@@ -1,11 +1,12 @@
-import { List, Datagrid, TextField } from "react-admin";
+import { List, Datagrid, TextField, DateField } from "react-admin";
 
 export const PatrimoineList: React.FC = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
       <TextField source="nom" />
-      <TextField source="type" />
-      <TextField source="valeur_comptable" />
+      <TextField source="possesseur.nom" label="Possesseur" />
+      <DateField source="t" label="Date" />
+      <TextField source="valeur_comptable" label="Valeur Comptable" />
     </Datagrid>
   </List>
 );

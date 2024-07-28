@@ -1,26 +1,38 @@
+import { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
-
-const data = [
-  ["Task", "Hours per Day"],
-  ["Work", 11],
-  ["Eat", 2],
-  ["Commute", 2],
-  ["Watch TV", 2],
-  ["Sleep", 7],
-];
-
-const options = {
-  title: "My Daily Activities",
-};
+import axios from "axios";
 
 const ChartPie = () => {
+  const [chartData, setChartData] = useState<any[]>([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/patrimoines")
+      .then((response) => {
+        const data = [["Nom", "Valeur Comptable"]];
+        response.data.forEach(
+          (item: { nom: string; valeur_comptable: number }) => {
+            data.push([item.nom, item.valeur_comptable.toString()]);
+          }
+        );
+        setChartData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  const options = {
+    title: "Répartition des patrimoines",
+  };
+
   return (
     <Chart
       chartType="PieChart"
-      data={data}
-      options={options}
       width="100%"
       height="400px"
+      data={chartData}
+      options={options}
     />
   );
 };
