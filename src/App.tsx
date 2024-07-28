@@ -11,9 +11,7 @@ import PossessionEdit from "./components/possession/possessionEdit";
 import dataProvider from "./providers/dataProvider";
 import ChartBar from "./components/chart/ChartBar";
 import ChartPie from "./components/chart/ChartPie";
-import { ProjectionFutureList } from "./components/projectionFuture/ProjectionFutureList";
-import { ProjectionFutureEdit } from "./components/projectionFuture/ProjectionFutureEdit";
-import { ProjectionFutureCreate } from "./components/projectionFuture/ProjectionFutureCreate";
+import FluxImpossibleList from "./components/projection_future/fluxImpossible";
 
 const Dashboard = () => (
   <div>
@@ -43,9 +41,7 @@ const App = () => (
     />
     <Resource
       name="Projection_futures"
-      list={ProjectionFutureList}
-      create={ProjectionFutureCreate}
-      edit={ProjectionFutureEdit}
+      list={FluxImpossibleList}
       icon={ShowChartIcon}
     />
   </Admin>
