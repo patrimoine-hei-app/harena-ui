@@ -1,5 +1,5 @@
 import { CustomDataprovider } from "./type";
-import { get, post , put, del} from "./utils";
+import { get, post, put, del } from "./utils";
 
 type Possession = {
   id: string;

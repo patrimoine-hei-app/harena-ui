@@ -33,7 +33,9 @@ type ProjectionFuture = {
 
 export const projectionFutureProvider: ICustomDataprovider<ProjectionFuture> = {
   getList: () => {
-    return get<ProjectionFuture[]>("projection_futures").then((response) => response.data);
+    return get<ProjectionFuture[]>("projection_futures").then(
+      (response) => response.data
+    );
   },
   getOne: (id) => {
     return get<ProjectionFuture>(`projection_futures/${id}`).then(
@@ -46,9 +48,10 @@ export const projectionFutureProvider: ICustomDataprovider<ProjectionFuture> = {
     );
   },
   update: (payload) => {
-    return put<ProjectionFuture>(`projection_futures/${payload.id}`, payload).then(
-      (response) => response.data
-    );
+    return put<ProjectionFuture>(
+      `projection_futures/${payload.id}`,
+      payload
+    ).then((response) => response.data);
   },
   delete: (id) => {
     return del<ProjectionFuture>(`projection_futures/${id}`).then(
