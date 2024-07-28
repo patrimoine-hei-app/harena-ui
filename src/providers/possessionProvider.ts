@@ -1,5 +1,5 @@
 import { CustomDataprovider } from "./type";
-import { get, post } from "./utils";
+import { get, post , put, del} from "./utils";
 
 type Possession = {
   id: string;
@@ -23,12 +23,12 @@ export const possessionProvider: CustomDataprovider<Possession> = {
     );
   },
   update: (payload) => {
-    return post<Possession>("possessions", payload).then(
+    return put<Possession>("possessions", payload).then(
       (response) => response.data
     );
   },
   delete: (id) => {
-    return get<Possession>(`possessions/${id}`).then(
+    return del<Possession>(`possessions/${id}`).then(
       (response) => response.data
     );
   },
