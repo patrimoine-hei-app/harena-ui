@@ -3,9 +3,9 @@
 import { DataProvider } from "react-admin";
 import { patrimoineProvider } from "./patrimoineProvider";
 import { possessionProvider } from "./possessionProvider";
-import { CustomDataprovider } from "./type";
+import { CustomDataprovider as IDataProvider } from "./type";
 
-const getProvider = (resource: string): CustomDataprovider<any> => {
+const getProvider = (resource: string): IDataProvider<any> => {
   switch (resource) {
     case "patrimoines":
       return patrimoineProvider;
