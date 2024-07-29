@@ -18,8 +18,8 @@ type Patrimoine = {
 
 export const patrimoineProvider: ICustomDataprovider<Patrimoine> = {
   getList: () => {
-    return get<{ data: Patrimoine[] }>("patrimoines").then((response) => 
-      response.data.data.map(item => ({ ...item, id: generateId(item) }))
+    return get<{ data: Patrimoine[] }>("patrimoines").then((response) =>
+      response.data.data.map((item) => ({ ...item, id: generateId(item) }))
     );
   },
   getOne: () => {

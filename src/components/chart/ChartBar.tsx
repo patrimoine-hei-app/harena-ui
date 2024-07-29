@@ -7,7 +7,9 @@ export default function ChartBar() {
 
   useEffect(() => {
     axios
-      .get("https://xev6yxxrvk.execute-api.eu-west-3.amazonaws.com/Prod/patrimoines")
+      .get(
+        "https://xev6yxxrvk.execute-api.eu-west-3.amazonaws.com/Prod/patrimoines"
+      )
       .then((response) => {
         const data: (string | number)[][] = [["Nom", "Valeur Comptable"]];
         response.data.data.forEach(
