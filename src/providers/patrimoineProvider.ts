@@ -1,5 +1,5 @@
 import { CustomDataprovider as ICustomDataprovider } from "./type";
-import { get, post, put, del } from "./utils";
+import { get } from "./utils";
 
 // Fonction pour générer un id unique basé sur le contenu
 const generateId = (item: any) => {
@@ -22,28 +22,16 @@ export const patrimoineProvider: ICustomDataprovider<Patrimoine> = {
       response.data.data.map(item => ({ ...item, id: generateId(item) }))
     );
   },
-  getOne: (id) => {
-    return get<{ data: Patrimoine }>(`patrimoines/${id}`).then((response) => ({
-      ...response.data,
-      id: generateId(response.data)
-    }));
+  getOne: () => {
+    return Promise.reject(new Error("Method not implemented."));
   },
-  create: (payload) => {
-    return post<{ data: Patrimoine }>("patrimoines", payload).then((response) => ({
-      ...response.data,
-      id: generateId(response.data)
-    }));
+  create: () => {
+    return Promise.reject(new Error("Method not implemented."));
   },
-  update: (payload) => {
-    return put<{ data: Patrimoine }>(`patrimoines/${payload.id}`, payload).then((response) => ({
-      ...response.data,
-      id: generateId(response.data)
-    }));
+  update: () => {
+    return Promise.reject(new Error("Method not implemented."));
   },
-  delete: (id) => {
-    return del<{ data: Patrimoine }>(`patrimoines/${id}`).then((response) => ({
-      ...response.data,
-      id: generateId(response.data)
-    }));
+  delete: () => {
+    return Promise.reject(new Error("Method not implemented."));
   },
 };
