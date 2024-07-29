@@ -26,14 +26,14 @@ const Dashboard = () => (
 const App = () => (
   <Admin dataProvider={dataProvider} dashboard={Dashboard}>
     <Resource
-      name="Patrimoines"
+      name="patrimoines"
       list={PatrimoineList}
       create={PatrimoineCreate}
       edit={PatrimoineEdit}
       icon={UserIcon}
     />
     <Resource
-      name="Possessions"
+      name="possessions"
       list={PossessionList}
       create={PossessionCreate}
       edit={PossessionEdit}
