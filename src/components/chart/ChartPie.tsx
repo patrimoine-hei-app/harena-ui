@@ -3,16 +3,16 @@ import { Chart } from "react-google-charts";
 import axios from "axios";
 
 const ChartPie = () => {
-  const [chartData, setChartData] = useState<any[]>([]);
+  const [chartData, setChartData] = useState<(string | number)[][]>([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/patrimoines")
+      .get("https://xev6yxxrvk.execute-api.eu-west-3.amazonaws.com/Prod/patrimoines")
       .then((response) => {
-        const data = [["Nom", "Valeur Comptable"]];
-        response.data.forEach(
-          (item: { nom: string; valeur_comptable: number }) => {
-            data.push([item.nom, item.valeur_comptable.toString()]);
+        const data: (string | number)[][] = [["Nom", "Valeur Comptable"]];
+        response.data.data.forEach(
+          (item: { nom: string; valeurComptable: number }) => {
+            data.push([item.nom, item.valeurComptable]);
           }
         );
         setChartData(data);
